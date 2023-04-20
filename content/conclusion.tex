@@ -1,0 +1,63 @@
+% !TeX root = ..\main.tex
+
+\chapter{Conclusion}
+After dealing with all the different NoSQL databases, this chapter is about
+summarizing the most important aspects.
+
+NoSQL is an umbrella term for a variety of different kinds of databases.
+Examples of such database systems include key-value stores, document-oriented
+databases, wide column databases and graph databases. Historically, SQL
+databases were created with the aim of being a “one size fits all” solution for
+all applications. Although this might have been realistic at the time of their
+inception, nowadays such a solution is infeasible due to the sheer variety of
+use cases for a database ranging from storing highly structured data to
+completely unstructured data and from low to enormous amounts of data. Most
+NoSQL databases on the other hand are designed to be a perfect fit for some use
+cases while accepting that this makes them a terrible choice for most other use
+cases. Due to that, developers need to choose the right database for their needs
+and may need to use multiple different databases in a single application.
+
+From the different databases discussed in this book, some application specific
+recommendations are given below: Graph databases are well-suited for databases
+with many relationships. CloudFirestore is a fully hosted document database
+managed by google. It offers great integration, especially in the world of
+mobile development. An open-source alternative would be MongoDB. MongoDB is
+another document database and a great choice, if the application has large
+amounts of different or changing data models. Use wide column databases like
+Cassandra if your system must deal with large amounts of unstructured data. Use
+key-value stores if you need a fast data access of data. With regards to the CAP
+theorem, we have shown that scalable NoSQL databases cannot forfeit partition
+tolerance and are therefore either AP or CP systems.
+
+The book compared the structured approach of SQL databases with the unstructured
+approach of NoSQL databases. Furthermore, it named specific advantages and disadvantages
+of popular representatives for the different NoSQL databases.
+The goal of this paper is to ease the search for a suitable database for given requirements or
+specific architectures.
+
+\section{Outlook}
+As data continues to grow in importance in our daily lives, the amount of data being
+generated is growing exponentially, much of which is unstructured data. This has led to the
+need for more flexible databases, such as NoSQL databases. With the rise of big data, more
+data is being stored in the cloud, which has further increased the popularity of NoSQL
+databases. The fact that many NoSQL databases are open-source projects also makes them
+more appealing, as there is a move towards more open-source databases.
+
+Sometimes SQL databases are still preferable, particularly when dealing with highly
+structured data. In the future, we can expect continued development and improvement of
+NoSQL databases, with efforts to address some of their limitations, such as improving
+transaction support and standardization. Additionally, we may see further advancements in
+the integration of NoSQL databases with other technologies, such as big data platforms and
+cloud computing. As organizations increasingly adopt digital technologies and generate larger
+amounts of data, NoSQL databases will continue to play a key role in managing and
+processing data efficiently and effectively.
+
+\section{Closing Remarks}
+In summary, while NoSQL databases have a common approach to handling big data and
+providing flexible schema designs, they differ significantly in their placement on the CAP
+theorem, which represents their strengths and weaknesses in terms of consistency, availability,
+and partition tolerance. As a result, selecting the right NoSQL database for a particular use
+case requires careful evaluation of its unique features and characteristics. However, NoSQL
+databases have proven to be a valuable alternative to traditional SQL databases and
+organizations can be confident that there is almost always a NoSQL solution that will meet
+their data storage needs.

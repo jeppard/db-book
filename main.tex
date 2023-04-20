@@ -2,15 +2,42 @@
 
 
 \begin{document}
-\chapter{\titel}{\subtitel}
+\defaultPagestyle
+\maketitle
+\tableofcontents
+\input{content/introduction.tex}
+
 \foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
-        \edef\FileName{content/\i}%
-            \IfFileExists{\FileName}{%
-                \input{\FileName}
+    \edef\SettingsFileName{content/chapter\i/einstellungen.tex}
+    \IfFileExists{\SettingsFileName}{%
+        \input{content/chapter\i/einstellungen.tex}
+        \newpage
+        \ihead{New DB Technologies}
+        \ohead{\titel}
+        \chead{\datum}
+        \ifoot{\hsize=400pt Authors: \authoren}
+        \cfoot{}
+        \ofoot{\thepage}
+        \mychapter{\titel }{\subtitel }
+        \begin{refsection}[content/chapter\i/bib/bibliographie.bib]
+            \foreach \u in {01,02,03,04,05,06,07,08,09,...,99} {%
+                \edef\ContentFileName{content/chapter\i/content/\u.tex}
+                \IfFileExists{\ContentFileName}{%
+                    \input{\ContentFileName}
+                }{%
+                    % Content File does not exist -> skip
+                    % \ContentFileName does not exist \\
+                }
             }
-            {%
-                %file does not exist
-            }
+            \printbibliography[heading=subbibintoc,title={Sources}]
+        \end{refsection}
+    }{%
+        % Chapter not found -> skip
+        % \SettingsFileName{} does not exist \\
+    }
 }
-\printbibliography
+\defaultPagestyle
+
+\input{content/conclusion.tex}
+\printbibliography[heading=bibintoc,title={Sources - Introduction and Conclusion}]
 \end{document}

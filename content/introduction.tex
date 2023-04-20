@@ -1,0 +1,57 @@
+% !TeX root = ..\main.tex
+
+\chapter{Introduction}
+Can relational databases (DBs) keep up with the ever-growing demands of modern
+big data architectures? Relational databases are the current state of the art
+when it comes to operational data. In the current years, the big data trends
+forced to reevaluate database structures. Therefore, NoSQL databases have gained
+traction in recent years. This book will deal with different NoSQL databases and
+analyze them in detail. It is a result of the course “Current database
+technologies” at the Corporate State University Stuttgart. The different
+chapters about the databases were written by small groups of students with
+limited interaction. Each chapter can be looked at as a small article or paper.
+It will explore Cassandra, Redis, Hazelcast, MongoDB, Cloud Firestore, and
+Neo4j. In general, the term NoSQL stands for “not only SQL”. It reflects
+databases with alternative models outside the standard relational world.
+
+SQL databases have been covered extensively in previous lectures. Principles
+such as ACID or BASE have been explained in more detail, and the limitations of
+SQL databases have been discussed. Today, more and more applications are based
+on NoSQL databases \parencite{solid_it_gmbh_db-engines_2023} and there are many
+different topologies of NoSQL databases, such as wide column, document-oriented,
+key-value or graph- based databases. As a result, these database topologies need
+to be discussed and compared with conventional SQL and other NoSQL topologies. A
+theoretical basis for this comparison would be the CAP theorem introduced by
+\textcite{brewer_towards_2000}, which deals with the following three different
+main characteristics of databases: Consistency, Availability and Partition
+Tolerance. The theorem claims that only two of these features can be covered by
+one system.
+
+As a result of our motivation and the context of this work, the following
+research question was formulated: \enquote{What are the advantages and
+disadvantages of current (open source) NoSQL DBs with a theoretical foundation
+of the CAP theorem \parencite{brewer_towards_2000} and task/application-oriented
+recommendations?}
+
+
+Exploring databases through sample projects can provide insights into the
+strengths and weaknesses of different databases and technologies. However, this
+approach has some limitations: We were only able to look at a limited number of
+database technologies. The sample of databases and projects chosen may be biased
+towards certain types of applications, and the analysis may be limited in depth
+due to time and resource constraints. In addition, the landscape of database
+technologies is constantly evolving. This may limit the relevance of the
+findings to current projects.
+
+In this paper, we will explore six different NoSQL databases, namely Cassandra,
+Redis, Hazelcast, MongoDB, The Cloud Firestore, and Neo4j. We will examine the
+unique features and benefits of each database, and highlight how they can be
+leveraged to meet the needs of various applications. Additionally, we will
+explore the trade-offs that come with different consistency, availability, and
+partition tolerance levels, as defined by the CAP theorem, and how each database
+balances these trade-offs. Through practical examples, readers will gain a clear
+understanding of the advantages and limitations of each NoSQL database and how
+they can be applied to real-world scenarios. By the end of this paper, readers
+will have a deeper understanding of the unique capabilities of each of these
+NoSQL databases, and be able to make informed decisions when choosing the right
+database for their specific needs.

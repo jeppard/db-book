@@ -8,7 +8,7 @@
     parskip=half,
     headsepline,
     footsepline,
-]{scrartcl}
+]{scrbook}
 
 % Used Packages
 \usepackage[utf8]{inputenc}
@@ -63,12 +63,12 @@
 \input{einstellungen}
 
 % Document Settings
-\title{\titel}
-\author{\authoren}
-\date{\datum}
+\title{\buchtitel}
+\author{\buchauthoren}
+\date{\buchdatum}
 
 \usepackage[%
-    pdftitle={\titel},
+    pdftitle={\buchtitel},
     pdfpagemode=UseOutlines, 		% Beim Oeffnen Inhaltsverzeichnis anzeigen
     pdfdisplaydoctitle=true, 		% Dokumenttitel statt Dateiname anzeigen.
     pdflang={English}, 			% Sprache des Dokuments.
@@ -90,18 +90,36 @@
 }
 
 %Only for the Template
-\usepackage{lipsum}
+% \usepackage{lipsum}
 
 % Header and Footer
-\ihead{New DB Technologies}
-\ohead{\titel}
-\chead{\datum}
-\ifoot{\hsize=400pt Authors: \authoren}
-\cfoot{}
-\ofoot{\thepage}
+\newcommand{\defaultPagestyle}{%
+    \ihead{New DB Technologies}
+    \ohead{\buchtitel}
+    \chead{\buchdatum}
+    \ifoot{\hsize=400pt Authors: \buchauthoren}
+    \cfoot{}
+    \ofoot{\thepage}
+}
 
 % Custom Commands
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\\}
 \newcommand{\tbd}[1]{\textcolor{red}{TBD: #1}\\}
 
-\newcommand{\chapter}[2]{\huge \textbf{#1} \\ \large \textit{#2}\par}
+\setcounter{tocdepth}{1}
+
+\newcommand{\mychapter}[2]{%
+  \refstepcounter{chapter}%
+  \chapter*{\huge \textbf{\thechapter. #1} \\ \large \normalfont\itshape #2}%
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+}
+
+\lstdefinestyle{yaml}{%
+     basicstyle=\color{blue}\footnotesize,
+     rulecolor=\color{black},
+     string=[s]{'}{'},
+     stringstyle=\color{blue},
+     comment=[l]{:},
+     commentstyle=\color{black},
+     morecomment=[l]{-}
+}

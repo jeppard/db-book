@@ -190,7 +190,7 @@
             "env": {}
         }
     ],
-    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoBuild.run": "never",
     "[git-commit]": {
         "editor.rulers": [
             72, 50
